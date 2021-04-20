@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:8
 
 LABEL maintainer="Michael Maffait"
 LABEL org.opencontainers.image.source="https://github.com/Pandemonium1986/docker-centos7"
