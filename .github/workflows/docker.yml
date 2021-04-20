@@ -47,7 +47,7 @@ jobs:
         uses:                  crazy-max/ghaction-docker-meta@v2
         with:
           images:              ghcr.io/${{ env.DOCKER_USER }}/${{ env.DOCKER_IMAGE }}
-          tag-semver:          |
+          tags:                |
             type=schedule,pattern=nightly
             type=ref,event=branch
             type=semver,pattern={{ version }}
