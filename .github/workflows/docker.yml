@@ -33,8 +33,9 @@ jobs:
       statuses: write
     name: "Called: Docker Build and Push Workflow"
     uses: pandemonium1986/.github/.github/workflows/called-docker.yml@develop
-    secrets:
+    with:
       docker-user: ${{ env.DOCKER_USER }}
       docker-image: ${{ env.DOCKER_IMAGE }}
+    secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
 
