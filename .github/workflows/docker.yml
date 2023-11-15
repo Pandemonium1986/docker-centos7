@@ -29,7 +29,7 @@ jobs:
   called-docker:
     permissions:
       contents: read
-      packages: read
+      packages: write
       statuses: write
     name: "Called: Docker Build and Push Workflow"
     uses: pandemonium1986/.github/.github/workflows/called-docker.yml@develop
