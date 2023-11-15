@@ -31,6 +31,8 @@ jobs:
       contents: read
       packages: write
       statuses: write
+    needs:
+      - called-linter
     name: "Called: Docker Build and Push Workflow"
     uses: pandemonium1986/.github/.github/workflows/called-docker.yml@develop
     with:
