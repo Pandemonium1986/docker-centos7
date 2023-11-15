@@ -36,8 +36,8 @@ jobs:
     name: "Called: Docker Build and Push Workflow"
     uses: pandemonium1986/.github/.github/workflows/called-docker.yml@develop
     with:
-      docker-user: "pandemonium1986"
-      docker-image: "centos7"
+      docker-user: ${{ github.repository_owner }}
+      docker-image: ${{ github.event.repository.name }}
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
 
