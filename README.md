@@ -1,9 +1,9 @@
 # Centos 7 Base Image
 
-![Github workflow status](https://github.com/Pandemonium1986/docker-centos7/workflows/docker/badge.svg)
-![](https://img.shields.io/github/release/Pandemonium1986/docker-centos7)
-![](https://img.shields.io/github/release-date/Pandemonium1986/docker-centos7)
-![](https://img.shields.io/github/license/Pandemonium1986/docker-centos7)
+[![Github workflow status](https://github.com/Pandemonium1986/docker-centos7/actions/workflows/docker.yml/badge.svg?branch=main)](https://github.com/Pandemonium1986/docker-centos7/actions/workflows/docker.yml)
+![release](https://img.shields.io/github/release/Pandemonium1986/docker-centos7)
+![release-datelicense](https://img.shields.io/github/release-date/Pandemonium1986/docker-centos7)
+![license](https://img.shields.io/github/license/Pandemonium1986/docker-centos7)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 Centos 7 docker base image. Built to be able to test playbooks and Ansible roles as if you were on an operating system with **systemd**.
