@@ -12,10 +12,6 @@ on:
       - "*"
   workflow_dispatch:
 
-env:
-  DOCKER_USER: "pandemonium1986"
-  DOCKER_IMAGE: "centos7"
-
 jobs:
   called-docker:
     permissions:
@@ -23,7 +19,7 @@ jobs:
       packages: write
       statuses: write
     name: "Called: Docker Build and Push Workflow"
-    uses: pandemonium1986/.github/.github/workflows/called-docker.yml@develop
+    uses: pandemonium1986/.github/.github/workflows/called-docker.yml@main
     with:
       docker-user: ${{ github.repository_owner }}
       docker-image: ${{ github.event.repository.name }}
