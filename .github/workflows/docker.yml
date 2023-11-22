@@ -17,22 +17,11 @@ env:
   DOCKER_IMAGE: "centos7"
 
 jobs:
-  called-linter:
-    permissions:
-      contents: read
-      packages: read
-      statuses: write
-    name: "Called: GitHub Super Linter Workflow"
-    uses: pandemonium1986/.github/.github/workflows/called-linter.yml@main
-    secrets:
-      github-token: ${{ secrets.GITHUB_TOKEN }}
   called-docker:
     permissions:
       contents: read
       packages: write
       statuses: write
-    needs:
-      - called-linter
     name: "Called: Docker Build and Push Workflow"
     uses: pandemonium1986/.github/.github/workflows/called-docker.yml@develop
     with:
@@ -40,4 +29,3 @@ jobs:
       docker-image: ${{ github.event.repository.name }}
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
-
