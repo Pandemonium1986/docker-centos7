@@ -1,7 +1,7 @@
 ---
 repository:
   name: "docker-centos7"
-  description: "Docker centos 7 base image"
+  description: "Docker centos 7 systemd image"
   # homepage:                            https://example.github.io/
   topics: "centos, docker, testing"
   private: false
