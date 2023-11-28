@@ -1,4 +1,4 @@
-# Centos 7 Base Image
+# Centos 7 systemd
 
 [![Github workflow status](https://github.com/Pandemonium1986/docker-centos7/actions/workflows/docker.yml/badge.svg?branch=main)](https://github.com/Pandemonium1986/docker-centos7/actions/workflows/docker.yml)
 ![release](https://img.shields.io/github/release/Pandemonium1986/docker-centos7)
