@@ -14,7 +14,8 @@ STOPSIGNAL SIGRTMIN+3
 ENV container=docker
 
 # Install dependencies
-RUN yum -y install \
+RUN yum -y install epel-release && \
+  yum -y install \
   openssh-server \
   wget \
   python-pip && \
