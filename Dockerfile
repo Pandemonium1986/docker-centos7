@@ -8,13 +8,21 @@ ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV PYTHONIOENCODING=utf8
+
+# Systemd configuration
+STOPSIGNAL SIGRTMIN+3
 ENV container=docker
 
 # Install dependencies
-RUN yum -y install epel-release && \
-  yum -y install \
+RUN yum -y install \
   openssh-server \
+  wget \
   python-pip && \
+  yum clean all
+
+# Patch systemd for cgroupv2
+RUN wget --quiet --no-check-certificate https://copr.fedorainfracloud.org/coprs/jsynacek/systemd-backports-for-centos-7/repo/epel-7/jsynacek-systemd-backports-for-centos-7-epel-7.repo -O /etc/yum.repos.d/jsynacek-systemd-centos-7.repo && \
+  yum update -y && \
   yum clean all
 
 # Remove systemd target
@@ -30,6 +38,6 @@ RUN (for i in *; do [ "$i" = systemd-tmpfiles-setup.service ] || rm -f "$i"; don
 
 WORKDIR /
 
-VOLUME ["/sys/fs/cgroup"]
+VOLUME [ "/tmp", "/run" ]
 
 CMD ["/lib/systemd/systemd"]
