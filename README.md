@@ -28,7 +28,7 @@ This image is built on GitHub each day, and any time a commit is `push` or a `re
 
 1. [Install Docker](https://docs.docker.com/engine/installation/).
 2. Pull this image from GitHub Container Registry: `docker pull ghcr.io/pandemonium1986/centos7:nightly` (or use the image you built earlier, e.g. `localhost/centos7:test`).
-3. Run a container from the image: `docker run --rm --detach --privileged --tty ---tmpfs /tmp --tmpfs /run --name centos7-pdm-ghcr ghcr.io/pandemonium1986/centos7:nightly`.
+3. Run a container from the image: `docker run --rm --detach --privileged --tty --tmpfs /tmp --tmpfs /run --name centos7-pdm-ghcr ghcr.io/pandemonium1986/centos7:nightly`.
 4. Exec cmd or interactive shell: `docker exec centos7-pdm-ghcr cat /etc/os-release` or `docker exec --tty --interactive centos7-pdm-ghcr bash`
 
 ## Author Information
