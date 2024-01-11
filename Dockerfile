@@ -8,6 +8,9 @@ ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US.UTF-8
 ENV PYTHONIOENCODING=utf8
+
+# Systemd configuration
+STOPSIGNAL SIGRTMIN+3
 ENV container=docker
 
 # Install dependencies
@@ -30,6 +33,6 @@ RUN (for i in *; do [ "$i" = systemd-tmpfiles-setup.service ] || rm -f "$i"; don
 
 WORKDIR /
 
-VOLUME ["/sys/fs/cgroup"]
+VOLUME [ "/tmp", "/run" ]
 
 CMD ["/lib/systemd/systemd"]
